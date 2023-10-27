@@ -1,19 +1,11 @@
-@import 'properties.css';
-@import 'colors.css';
+@import 'cards.css';
 @import 'modal.css';
-@import 'card.css';
-@import 'contentCard.css';
 
 body {
-    background-color: #e4e4e4;
-    color: #0e0e0e;
-    font-family: var(--default-font-family);
-}
-
-.answer {
-    color: var(--green);
-}
-
-.answer-wrong {
-    color: var(--red);
+    background-color: #f7d4a7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }

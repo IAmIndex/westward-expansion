@@ -3,138 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            background-color: #f7d4a7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        /* Estilos do card */
-        .card-container {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .card {
-            width: 300px;
-            background-color: #ffeecc;
-            border: 3px solid #a87551;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin-right: 20px; /* Add some margin between the cards */
-        }
-
-        .card-image {
-            background-size: cover;
-            filter: sepia(100%) grayscale(100%); /* Efeito de imagem envelhecida */
-            height: 200px;
-        }
-
-        .card-content {
-            padding: 20px;
-        }
-
-        .card-title {
-            font-family: 'Old Standard TT', serif;
-            font-size: 24px;
-            font-weight: bold;
-            color: #a87551;
-            /* text-shadow: 2px 2px 2px #754325; */
-            margin-bottom: 10px;
-        }
-
-        .card-button {
-            display: block;
-            background-color: #a87551;
-            color: #fff;
-            width: 100%;
-            font-family: 'Old Standard TT', serif;
-            text-align: center;
-            padding: 10px;
-            border: 2px solid #754325;
-            border-radius: 5px;
-            cursor: pointer; /* Change cursor to pointer on hover */
-            transition: background-color 0.3s;
-        }
-
-        .card-button:hover {
-            background-color: #8b6136;
-        }
-
-        /* Estilos do modal */
-        .modal-container {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-        }
-
-        .modal {
-            background-color: #ffeecc;
-            border: 3px solid #a87551;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            padding: 20px;
-            max-width: 400px;
-        }
-
-        .modal-content {
-            text-align: center;
-        }
-
-        .modal-title {
-            font-family: 'Old Standard TT', serif;
-            font-size: 24px;
-            font-weight: bold;
-            color: #a87551;
-            margin-bottom: 10px;
-        }
-
-        .modal-button {
-            background-color: #a87551;
-            color: #fff;
-            font-family: 'Old Standard TT', serif;
-            text-align: center;
-            padding: 10px 20px;
-            border: 2px solid #754325;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .modal-button:hover {
-            background-color: #8b6136;
-        }
-
-        /* Estilo do botão de abrir o modal */
-        .open-modal-button {
-            background-color: #a87551;
-            color: #fff;
-            font-family: 'Old Standard TT', serif;
-            text-align: center;
-            padding: 10px 20px;
-            border: 2px solid #754325;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .open-modal-button:hover {
-            background-color: #8b6136;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="card-container">
@@ -163,6 +32,15 @@
             </div>
         </div>
     </div>
-    <script src="javascript/modal.js"></script>
+    <script>
+        function openModal() {
+            document.getElementById("mainModal").style.display = "flex";
+        }
+        
+        function closeModal() {
+            document.getElementById("mainModal").style.display = "none";
+        }
+    </script>
+    <!-- <script src="javascript/modal.js"></script> -->
 </body>
 </html>
