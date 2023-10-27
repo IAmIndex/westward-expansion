@@ -3,72 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Perguntas - Quiz</title>
+    <style>
+        body {
+            background-color: #f7d4a7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Estilos do card */
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card {
+            width: 300px;
+            background-color: #ffeecc;
+            border: 3px solid #a87551;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-right: 20px; /* Add some margin between the cards */
+        }
+
+        .card-image {
+            background-size: cover;
+            filter: sepia(100%) grayscale(100%); /* Efeito de imagem envelhecida */
+            height: 200px;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-family: 'Old Standard TT', serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #a87551;
+            /* text-shadow: 2px 2px 2px #754325; */
+            margin-bottom: 10px;
+        }
+
+        .card-button {
+            display: block;
+            background-color: #a87551;
+            color: #fff;
+            width: 100%;
+            font-family: 'Old Standard TT', serif;
+            text-align: center;
+            padding: 10px;
+            border: 2px solid #754325;
+            border-radius: 5px;
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: background-color 0.3s;
+        }
+
+        .card-button:hover {
+            background-color: #8b6136;
+        }
+
+        /* Estilos do modal */
+        .modal-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .modal {
+            background-color: #ffeecc;
+            border: 3px solid #a87551;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+            max-width: 400px;
+        }
+
+        .modal-content {
+            text-align: center;
+        }
+
+        .modal-title {
+            font-family: 'Old Standard TT', serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #a87551;
+            margin-bottom: 10px;
+        }
+
+        .modal-button {
+            background-color: #a87551;
+            color: #fff;
+            font-family: 'Old Standard TT', serif;
+            text-align: center;
+            padding: 10px 20px;
+            border: 2px solid #754325;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .modal-button:hover {
+            background-color: #8b6136;
+        }
+
+        /* Estilo do botão de abrir o modal */
+        .open-modal-button {
+            background-color: #a87551;
+            color: #fff;
+            font-family: 'Old Standard TT', serif;
+            text-align: center;
+            padding: 10px 20px;
+            border: 2px solid #754325;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .open-modal-button:hover {
+            background-color: #8b6136;
+        }
+    </style>
 </head>
 <body>
-    <main>
-        <section id="contents">
-            <div class="content-card">
-                <div class="content-card-header">
-                    <h3>Guerra fria</h3>
-                </div>
-                <div class="content-card-body">
-                    <button class="btn-question-gen border-red" data-target-theme="theme-1">Gerar pergunta</button>
-                </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-image" style="background-image: url('images/woodenDie.webp');"></div>
+            <div class="card-content">
+                <div class="card-title">Evento aleatório</div>
+                <button class="card-button" onclick="openModal()">Gerar evento</button>
             </div>
-
-            <div class="content-card">
-                <div class="content-card-header">
-                    <h3>Domínios morfoclimáticos</h3>
-                </div>
-                <div class="content-card-body">
-                    <button class="btn-question-gen border-blue" data-target-theme="theme-2">Gerar pergunta</button>
-                </div>
+        </div>
+        <div class="card">
+            <div class="card-image" style="background-image: url('images/oldCards.webp');"></div>
+            <div class="card-content">
+                <div class="card-title">Realizar aposta</div>
+                <button class="card-button" onclick="openModal()">Apostar</button>
             </div>
+        </div>
 
-            <div class="content-card">
-                <div class="content-card-header">
-                    <h3>Formação ambiental e diversidade vegetativa</h3>
-                </div>
-                <div class="content-card-body">
-                    <button class="btn-question-gen border-yellow" data-target-theme="theme-3">Gerar pergunta</button>
-                </div>
-            </div>
-
-            <div class="content-card">
-                <div class="content-card-header">
-                    <h3>Segunda Guerra Mundial</h3>
-                </div>
-                <div class="content-card-body">
-                    <button class="btn-question-gen border-green" data-target-theme="theme-4">Gerar pergunta</button>
-                </div>
-            </div>
-
-            <!-- <div class="content-card">
-                <div class="content-card-header">
-                    <h3>teste</h3>
-                </div>
-                <div class="content-card-body">
-                    <button class="btn-question-gen" data-target-theme="theme-5">Tema 5</button>
-                </div>
-            </div> -->
-        </section>
-        <div class="modal" id="mainModal">
-            <div class="card">
-                <div class="card-header" id="card-header">
-                    <span class="close" id="closeModalBtn">&times;</span>
-                    <h3>Card header</h3>
-                </div>
-                <div class="card-body" id="card-body">
-                    <p class="answer">Card body</p>
-                </div>
-                <div class="card-footer" id="card-footer">
-                    <h5>Card footer</h5>
+        <div class="modal-container" id="mainModal">
+            <div class="modal">
+                <div class="modal-content">
+                    <div class="modal-title">Modal no Estilo Velho Oeste</div>
+                    <p>Este é um modal no estilo Velho Oeste. Clique no botão abaixo para fechá-lo.</p>
+                    <button class="modal-button" onclick="closeModal()">Fechar Modal</button>
                 </div>
             </div>
         </div>
-    </main>
-    <script async defer src="./javascript/modal.js"></script>
+    </div>
+    <script src="javascript/modal.js"></script>
 </body>
 </html>
