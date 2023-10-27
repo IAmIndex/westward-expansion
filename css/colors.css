@@ -1,0 +1,35 @@
+button[class*="border-"] {
+    transition: .4s;
+}
+
+.border-blue {
+    border: 1px solid var(--blue);
+}
+
+.border-blue:hover {
+    background-color: var(--blue);
+}
+
+.border-red {
+    border: 1px solid var(--red);
+}
+
+.border-red:hover {
+    background-color: var(--red);
+}
+
+.border-yellow {
+    border: 1px solid var(--yellow);
+}
+
+.border-yellow:hover {
+    background-color: var(--yellow);
+}
+
+.border-green {
+    border: 1px solid var(--green);
+}
+
+.border-green:hover {
+    background-color: var(--green);
+}

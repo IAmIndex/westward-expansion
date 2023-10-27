@@ -1,0 +1,23 @@
+:root {
+    /* Defaults */
+    --default-bg-image: url('../images/defaultBackground.png');
+    --default-font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    /* Colors */
+    --blue: #09a7f6;
+    --green: #09f60d;
+    --yellow: #e6e90b;
+    --red: #f60909;
+    --white: #fbfbfb;
+
+    /* Cards */
+    --card-border: 1px solid lightgray;
+    --card-border-radius: 5px;
+    --card-image-max-width: 100%;
+    --card-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    /* Content cards */
+    --content-card-color: #e4e4e4, #fbfbfb, #e4e4e4;
+    --content-card-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}

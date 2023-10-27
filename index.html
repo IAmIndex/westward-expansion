@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Perguntas - Quiz</title>
+</head>
+<body>
+    <main>
+        <section id="contents">
+            <div class="content-card">
+                <div class="content-card-header">
+                    <h3>Guerra fria</h3>
+                </div>
+                <div class="content-card-body">
+                    <button class="btn-question-gen border-red" data-target-theme="theme-1">Gerar pergunta</button>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <div class="content-card-header">
+                    <h3>Domínios morfoclimáticos</h3>
+                </div>
+                <div class="content-card-body">
+                    <button class="btn-question-gen border-blue" data-target-theme="theme-2">Gerar pergunta</button>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <div class="content-card-header">
+                    <h3>Formação ambiental e diversidade vegetativa</h3>
+                </div>
+                <div class="content-card-body">
+                    <button class="btn-question-gen border-yellow" data-target-theme="theme-3">Gerar pergunta</button>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <div class="content-card-header">
+                    <h3>Segunda Guerra Mundial</h3>
+                </div>
+                <div class="content-card-body">
+                    <button class="btn-question-gen border-green" data-target-theme="theme-4">Gerar pergunta</button>
+                </div>
+            </div>
+
+            <!-- <div class="content-card">
+                <div class="content-card-header">
+                    <h3>teste</h3>
+                </div>
+                <div class="content-card-body">
+                    <button class="btn-question-gen" data-target-theme="theme-5">Tema 5</button>
+                </div>
+            </div> -->
+        </section>
+        <div class="modal" id="mainModal">
+            <div class="card">
+                <div class="card-header" id="card-header">
+                    <span class="close" id="closeModalBtn">&times;</span>
+                    <h3>Card header</h3>
+                </div>
+                <div class="card-body" id="card-body">
+                    <p class="answer">Card body</p>
+                </div>
+                <div class="card-footer" id="card-footer">
+                    <h5>Card footer</h5>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script async defer src="./javascript/modal.js"></script>
+</body>
+</html>
