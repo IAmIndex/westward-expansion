@@ -1,14 +1,5 @@
-{
-    "mostLikely": [
-        "Os nativos invadiram sua terra! -Volte 1 casa e pague US$10.000 de recursos gastos-",
-        "Os nativos invadiram sua terra! +Volte 1 casa e pague US$10.000 de recursos gastos+"
-    ],
-
-    "likely": [
-
-    ],
-    
-    "leastLikely": [
-        "Você achou uma mina de ouro! +Receba US$500.000+"
-    ]
-}
+[
+    "Os nativos invadiram sua terra! -Volte 1 casa e pague US$10.000 de recursos gastos-",
+    "Os nativos invadiram sua terra! +Volte 1 casa e pague US$10.000 de recursos gastos+",
+    "Você achou uma mina de ouro! +Receba US$500.000+"
+]

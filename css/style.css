@@ -9,3 +9,12 @@ body {
     height: 100vh;
     margin: 0;
 }
+
+.text-input {
+    padding: 10px;
+    border: 2px solid #754325;
+    border-radius: 5px;
+    font-family: 'Old Standard TT', serif;
+    font-size: 16px;
+    margin: 2% 0;
+}
