@@ -1,5 +1,6 @@
 const modal = document.getElementById("mainModal");
 const modalText = document.getElementById("modal-text");
+const modalHeader = document.getElementById("modal-title");
 
 const openingBtns = document.getElementsByClassName("card-button");
 const closingBtn = document.getElementById("modal-closing-button");
@@ -32,15 +33,15 @@ const fetchEvent = (eventsArray) => {
  */
 const setUpEvent = (eventsArray) => {
     const randomEvent = fetchEvent(eventsArray);
-    const positiveEventPattern = /(\+)([^\+]+)(\+)/;
-    const negativeEventPattern = /(-)([^-]+)(-)/;
+    const positiveEventPattern = /(\+)([^\+]+)(\+)/g;
+    const negativeEventPattern = /(-)([^-]+)(-)/g;
+    const regularEventPattern = /(~)([^~]+)(~)/g;
 
     const isPositiveEvent = randomEvent.match(positiveEventPattern)
 
-    formattedQuestion = randomEvent.replace(
-        (isPositiveEvent)?positiveEventPattern:negativeEventPattern,
-        (isPositiveEvent)?"<span style='color:#00ff00;'>$2</span>":"<span style='color:#ff0000;'>$2</span>" //Change CSS property color according to if it is Positive (+) or Negative (-)
-    );
+    formattedQuestion = randomEvent.replace(negativeEventPattern,"<span style='color:#ff0000;'>$2</span>");
+    formattedQuestion = formattedQuestion.replace(positiveEventPattern,"<span style='color:#00ff00;'>$2</span>");
+    formattedQuestion = formattedQuestion.replace(regularEventPattern,"<span style='color:#ffbf00;'>$2</span>");
 
     formattedQuestion = "<p id='modal-text'>" + formattedQuestion + "</p>";
 
@@ -54,7 +55,7 @@ const setUpEvent = (eventsArray) => {
  * @returns {string: bool, string: int}
  */
 const setUpGamble = (value) => {
-    value = value===0?1:value;
+    value = value===0?100000000000:value;
     const k = 100;
     const winningChance = (k/value);
     const randomNumber = Math.floor(Math.random()*100)+1;
@@ -87,13 +88,16 @@ const openModal = (e) => {
     
     if (buttonTheme === "event") {
         const formattedEvent = setUpEvent(eventsJsonFile);
+        modalHeader.innerHTML = "O que será que vai acontecer agora?";
         modalText.innerHTML = formattedEvent;
     } else {
         const hasWonAndAmount = setUpGamble(parseInt(gambledValue.value));
         if (hasWonAndAmount.hasWon) {
+            modalHeader.innerHTML = "Quais as chances?";
             modalText.innerHTML = "<p id='modal-text'>Parabéns! Você <span style='color:#00ff00;'>ganhou $"+hasWonAndAmount.wonAmount+".000</span>! Recolha seu dinheiro com o banco";
         } else {
-            modalText.innerHTML = "<p id='modal-text'>Que pena! Parece que <span style='color:#ff0000'>você perdeu a aposta</span>. Não que isso seja um problema, você pode sempre tentar apostar de novo e ganhar mais do que perdeu! <span style='color:#00ff00;'>Você pode ganhar 5x o valor inserido!</span>"
+            modalHeader.innerHTML = "Você me deve!";
+            modalText.innerHTML = "<p id='modal-text'>Que pena! Parece que <span style='color:#ff0000'>você perdeu a aposta</span>. Não que isso seja um problema, você pode sempre tentar apostar de novo e ganhar mais do que perdeu! <span style='color:#ffbf00;'>Você pode ganhar 5x o valor inserido!</span>"
         }
     }
 
