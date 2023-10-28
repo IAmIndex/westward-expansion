@@ -8,7 +8,7 @@ const closingBtn = document.getElementById("modal-closing-button");
 const gambledValue = document.getElementById("text-input")
 
 let eventsJsonFile;
-fetch('/json/events.json')
+fetch('/westward-expansion/json/events.json')
     .then( (response)=> {return response.json()} )
     .then(json=> eventsJsonFile=json);
 
