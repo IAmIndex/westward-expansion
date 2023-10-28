@@ -11,36 +11,28 @@
             <div class="card-image" style="background-image: url('images/woodenDie.webp');"></div>
             <div class="card-content">
                 <div class="card-title">Evento aleatório</div>
-                <button class="card-button" onclick="openModal()">Gerar evento</button>
+                <button class="card-button" data-theme="event">Gerar evento</button>
             </div>
         </div>
         <div class="card">
             <div class="card-image" style="background-image: url('images/oldCards.webp');"></div>
             <div class="card-content">
                 <div class="card-title">Realizar aposta</div>
-                <button class="card-button" onclick="openModal()">Apostar</button>
+                <input type="text" class="text-input" id="text-input" placeholder="Digite o valor (x1000)">
+                <button class="card-button" data-theme="gamble">Apostar</button>
             </div>
         </div>
 
         <div class="modal-container" id="mainModal">
             <div class="modal">
                 <div class="modal-content">
-                    <div class="modal-title">Modal no Estilo Velho Oeste</div>
-                    <p>Este é um modal no estilo Velho Oeste. Clique no botão abaixo para fechá-lo.</p>
-                    <button class="modal-button" onclick="closeModal()">Fechar Modal</button>
+                    <div class="modal-title" id="modal-title">Modal no Estilo Velho Oeste</div>
+                    <p id="modal-text">Este é um modal no estilo Velho Oeste. Clique no botão abaixo para fechá-lo.</p>
+                    <button class="modal-button" id="modal-closing-button">Fechar</button>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        function openModal() {
-            document.getElementById("mainModal").style.display = "flex";
-        }
-        
-        function closeModal() {
-            document.getElementById("mainModal").style.display = "none";
-        }
-    </script>
-    <!-- <script src="javascript/modal.js"></script> -->
+    <script src="javascript/modal.js"></script>
 </body>
 </html>
